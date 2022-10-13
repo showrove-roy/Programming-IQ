@@ -5,7 +5,6 @@ import pic from "../../3.jpg";
 
 const Topics = () => {
   const topics = useLoaderData();
-  console.log(topics);
   return (
     <div
       className=' h-fit'
