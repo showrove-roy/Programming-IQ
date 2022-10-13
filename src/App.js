@@ -35,7 +35,7 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return (
-    <div className='App w-full'>
+    <div className='App w-full max-w-7xl mx-auto'>
       <RouterProvider router={router}></RouterProvider>
     </div>
   );
