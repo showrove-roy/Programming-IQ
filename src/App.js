@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
 import "./App.css";
 import Home from "./components/Home/Home";
 import Main from "./layout/Main";
@@ -9,10 +10,12 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
+        loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
         element: <Home></Home>,
       },
       {
         path: "/home",
+        loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
         element: <Home></Home>,
       },
       {

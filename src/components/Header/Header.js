@@ -6,7 +6,7 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className=' bg-[#06283D] h-12 flex align-middle justify-between  text-white font-semibold md:px-12 '>
+    <nav className=' bg-[#06283D] h-12 flex align-middle justify-between  text-white font-semibold md:px-12 sticky top-0'>
       <div className=' py-1 ml-8 z-50'>
         <Link to='/'>
           <img src={logo} alt='Programming_IQ' className='h-10' />
@@ -42,9 +42,10 @@ const Header = () => {
           }>
           Topic
         </NavLink>
+        {/* #F05454 */}
         <NavLink
           to='/blog'
-          className='px-5 py-[2px] mx-2 hover:bg-[#F05454] rounded-sm duration-500'
+          className='px-5 py-[2px] mx-2 hover:bg-[#f0545468] rounded-sm duration-500'
           style={({ isActive }) =>
             isActive ? { backgroundColor: "#F05454" } : undefined
           }>
