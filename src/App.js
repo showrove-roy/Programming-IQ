@@ -1,8 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-
 import "./App.css";
 import Home from "./components/Home/Home";
+import Topics from "./components/Topics/Topics";
 import Main from "./layout/Main";
+import { loaderData } from "./LoaderData/loaderData";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,13 +12,18 @@ const router = createBrowserRouter([
     children: [
       {
         path: "/",
-        loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+        loader: loaderData,
         element: <Home></Home>,
       },
       {
-        path: "/home",
-        loader: () => fetch("https://openapi.programming-hero.com/api/quiz"),
+        path: "home",
+        loader: loaderData,
         element: <Home></Home>,
+      },
+      {
+        path: "topics",
+        loader: loaderData,
+        element: <Topics></Topics>,
       },
       {
         path: "*",

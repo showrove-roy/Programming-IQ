@@ -27,22 +27,22 @@ const Header = () => {
           Home
         </NavLink>
         <NavLink
+          to='/topics'
+          className='px-5 py-[2px] mx-2 hover:bg-[#F05454] rounded-sm duration-500'
+          style={({ isActive }) =>
+            isActive ? { backgroundColor: "#F05454" } : undefined
+          }>
+          Topics
+        </NavLink>
+        <NavLink
           to='/about'
           className='px-5 py-[2px] mx-2 hover:bg-[#F05454] rounded-sm duration-500'
           style={({ isActive }) =>
             isActive ? { backgroundColor: "#F05454" } : undefined
           }>
-          About
+          Statistics
         </NavLink>
-        <NavLink
-          to='/topic'
-          className='px-5 py-[2px] mx-2 hover:bg-[#F05454] rounded-sm duration-500'
-          style={({ isActive }) =>
-            isActive ? { backgroundColor: "#F05454" } : undefined
-          }>
-          Topic
-        </NavLink>
-        {/* #F05454 */}
+
         <NavLink
           to='/blog'
           className='px-5 py-[2px] mx-2 hover:bg-[#f0545468] rounded-sm duration-500'
