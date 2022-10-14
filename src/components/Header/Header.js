@@ -6,8 +6,8 @@ import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/solid";
 const Header = () => {
   const [open, setOpen] = useState(false);
   return (
-    <nav className=' bg-[#06283D] h-12 flex align-middle justify-between  text-white font-semibold md:px-12 sticky top-0'>
-      <div className=' py-1 ml-8 z-50'>
+    <nav className=' bg-[#06283D] h-12 flex align-middle justify-between  text-white font-semibold md:px-12 sticky top-0 z-30'>
+      <div className=' py-1 ml-8 z-40'>
         <Link to='/'>
           <img src={logo} alt='Programming_IQ' className='h-10' />
         </Link>
@@ -54,7 +54,7 @@ const Header = () => {
       </div>
       <div
         onClick={() => setOpen(!open)}
-        className='h-10 w-10 flex align-middle cursor-pointer md:hidden  mr-8 z-50'>
+        className='h-10 w-10 flex align-middle cursor-pointer md:hidden  mr-8 z-40'>
         {open ? <XMarkIcon /> : <Bars3Icon />}
       </div>
     </nav>

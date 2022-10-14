@@ -14,12 +14,23 @@ const Quizs = () => {
       </h1>
       <hr className='h-1 md:w-40 w-28 m-auto mb-1 bg-[#30475E]' />
       <hr className='h-1 md:w-32 w-20 m-auto md:mb-5 mb-2 bg-[#30475E]' />
-      <p className='md:mb-10 mb-5 text-2xl font-medium text-[#256D85]'>
-        Total Quiz: {total}
-      </p>
-      {questions.map((qun, index) => (
-        <Question key={qun.id} index={index} qun={qun}></Question>
-      ))}
+      <div className='sticky top-12 border-b-2 bg-white py-5 md:mb-10 mb-5 flex justify-evenly'>
+        {" "}
+        <p className='md:text-2xl text-base font-medium text-[#256D85]'>
+          Total Quiz: {total}
+        </p>
+        <p className='md:text-2xl text-base font-medium text-[#F05454]'>
+          Wrong: {total}
+        </p>
+        <p className='md:text-2xl text-base font-medium text-[#256D85]'>
+          Correct: {total}
+        </p>
+      </div>
+      <div>
+        {questions.map((qun, index) => (
+          <Question key={qun.id} index={index} qun={qun}></Question>
+        ))}
+      </div>
     </div>
   );
 };
