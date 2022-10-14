@@ -1,4 +1,7 @@
+import { EyeIcon } from "@heroicons/react/24/solid";
 import React from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Question = ({ qun, index, result }) => {
   const { id, correctAnswer, options, question } = qun;
@@ -11,9 +14,26 @@ const Question = ({ qun, index, result }) => {
       }
     }
   };
+  const seeAnswer = () =>
+    toast.info(`Answer of quiz ${index + 1} : ${correctAnswer}`, {
+      position: "top-center",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
   return (
     <div className=' rounded-md md:w-3/5 w-full mx-auto p-4 my-8 bg-[#DFF6FF]'>
-      <h1 className='md:text-xl text-lg font-medium my-4'>
+      <div className='flex justify-end'>
+        <EyeIcon
+          title='See Correct Answer'
+          className='h-5 w-5 cursor-pointer text-[#47B5FF] hover:text-[#F05454]'
+          onClick={seeAnswer}></EyeIcon>
+      </div>
+      <h1 className='md:text-xl text-lg font-medium mb-4'>
         <strong className='text-[#47B5FF]'>Quiz {index + 1}:</strong> {question}
       </h1>
       <div>
@@ -35,6 +55,7 @@ const Question = ({ qun, index, result }) => {
           </div>
         ))}
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import Question from "../Question/Question";
+import "react-toastify/dist/ReactToastify.css";
 
 const Quizs = () => {
   const quizsData = useLoaderData();
@@ -10,8 +12,20 @@ const Quizs = () => {
   const [wrong, setWrong] = useState(0);
   const result = (answer) => {
     answer === true ? setCorrect(correct + 1) : setWrong(wrong + 1);
+    if (answer === true) {
+      notify();
+    }
   };
-
+  const notify = () =>
+    toast.success("👍 Wow! Good Job", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
   return (
     <div className='px-5'>
       <h1 className='font-bold md:text-5xl text-3xl md:mt-10 mt-5 mb-2 text-[#F05454]'>
@@ -40,6 +54,7 @@ const Quizs = () => {
             result={result}></Question>
         ))}
       </div>
+      <ToastContainer></ToastContainer>
     </div>
   );
 };
