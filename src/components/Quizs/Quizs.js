@@ -12,12 +12,21 @@ const Quizs = () => {
   const [wrong, setWrong] = useState(0);
   const result = (answer) => {
     answer === true ? setCorrect(correct + 1) : setWrong(wrong + 1);
-    if (answer === true) {
-      notify();
-    }
+    answer === true ? notify() : warning();
   };
   const notify = () =>
     toast.success("👍 Wow! Good Job", {
+      position: "top-center",
+      autoClose: 1000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
+
+  const warning = () =>
+    toast.warn("⚠️ Sorry! Please Try Next Time", {
       position: "top-center",
       autoClose: 1000,
       hideProgressBar: false,
