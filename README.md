@@ -1,6 +1,6 @@
 # Programming IQ
 
-This project is a Programming Quiz project, Here is some programming languages common question. Every question has multiple option and have a option to choose correct one. Answer is correct or wrong that checked instand and show result.
+This project is a Programming Quiz project, Here is some programming languages common question. Every question has multiple option and have a option to choose correct one. Answer is correct or wrong that checked instant and show result.
 
 ## QUIZ API LINK:
 
