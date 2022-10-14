@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import Question from "../Question/Question";
 
@@ -6,6 +6,11 @@ const Quizs = () => {
   const quizsData = useLoaderData();
 
   const { id, name, questions, total } = quizsData.data;
+  const [correct, setCorrect] = useState(0);
+  const [wrong, setWrong] = useState(0);
+  const result = (answer) => {
+    answer === true ? setCorrect(correct + 1) : setWrong(wrong + 1);
+  };
 
   return (
     <div className='px-5'>
@@ -20,15 +25,19 @@ const Quizs = () => {
           Total Quiz: {total}
         </p>
         <p className='md:text-2xl text-base font-medium text-[#F05454]'>
-          Wrong: {total}
+          Wrong: {wrong}
         </p>
         <p className='md:text-2xl text-base font-medium text-[#256D85]'>
-          Correct: {total}
+          Correct: {correct}
         </p>
       </div>
       <div>
         {questions.map((qun, index) => (
-          <Question key={qun.id} index={index} qun={qun}></Question>
+          <Question
+            key={qun.id}
+            index={index}
+            qun={qun}
+            result={result}></Question>
         ))}
       </div>
     </div>
