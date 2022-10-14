@@ -7,7 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 const Quizs = () => {
   const quizsData = useLoaderData();
 
-  const { id, name, questions, total } = quizsData.data;
+  const { name, questions, total } = quizsData.data;
   const [correct, setCorrect] = useState(0);
   const [wrong, setWrong] = useState(0);
   const result = (answer) => {

@@ -35,7 +35,7 @@ const Header = () => {
           Topics
         </NavLink>
         <NavLink
-          to='/about'
+          to='/statistics'
           className='px-5 py-[2px] mx-2 hover:bg-[#F05454] rounded-sm duration-500'
           style={({ isActive }) =>
             isActive ? { backgroundColor: "#F05454" } : undefined

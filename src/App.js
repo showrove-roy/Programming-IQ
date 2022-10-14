@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import Home from "./components/Home/Home";
 import Quizs from "./components/Quizs/Quizs";
+import Statistics from "./components/Statistics/Statistics";
 import Topics from "./components/Topics/Topics";
 import Main from "./layout/Main";
 import { loaderData } from "./LoaderData/loaderData";
@@ -25,6 +26,11 @@ const router = createBrowserRouter([
         path: "topics",
         loader: loaderData,
         element: <Topics></Topics>,
+      },
+      {
+        path: "statistics",
+        loader: loaderData,
+        element: <Statistics></Statistics>,
       },
       {
         path: "/topic/:topicID",
